@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Container: React.FC = ({ children }) => (
   <main
-    className='relative container mx-auto rounded-sm flex font-sans flex-col p-4 border-gray-600 border mb-4'
+    className='relative container mx-auto rounded-sm flex font-sans flex-col p-4 mb-4 lg:border-b lg:border-l lg:border-r border-gray-600'
     style={{ maxWidth: '42rem' }}
   >
     {children}
@@ -10,7 +10,7 @@ export const Container: React.FC = ({ children }) => (
 )
 
 export const Title: React.FC = ({ children }) => (
-  <h1 className='text-xl font-bold text-gray-800 mb-2'>{children}</h1>
+  <h1 className='text-2xl font-bold text-gray-800 mb-2'>{children}</h1>
 )
 
 export const Chapter: React.FC = ({ children }) => (

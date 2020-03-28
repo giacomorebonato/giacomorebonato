@@ -24,7 +24,7 @@ const Index: React.FC = () => {
         <br />
         Passionate about:
       </P>
-      <ul className='list-disc list-inside'>
+      <ul className='list-disc list-inside leading-normal'>
         <li>ReactJS</li>
         <li>A11Y</li>
         <li>D3</li>
@@ -40,7 +40,7 @@ const Index: React.FC = () => {
         <li>People</li>
       </ul>
       <Chapter>Contacts</Chapter>
-      <ul className='list-disc list-inside'>
+      <ul className='list-disc list-inside leading-loose'>
         <li>
           <Link href='https://github.com/giacomorebonato/'>Github</Link>
         </li>

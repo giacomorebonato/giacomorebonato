@@ -8,9 +8,9 @@ const Index: React.FC = () => {
       <Seo title='Giacomo Rebonato' />
       <header>
         <Title>Giacomo Rebonato</Title>
-        <div className='flex justify-center'>
+        <div className='text-center'>
           <img
-            className='border border-4 rounded-full'
+            className='border border-4 rounded-full inline'
             src={require('../avatar.jpg')}
             alt='A photograph of Giacomo Rebonato'
             object-fit='contain'

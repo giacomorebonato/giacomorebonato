@@ -53,7 +53,8 @@ const Index: React.FC = () => {
           </Link>
         </li>
         <li>
-          <Link href='mailto:grebonato@outlook.ie'>Email</Link>
+          Email -{` `}
+          <Link href='mailto:grebonato@outlook.ie'>grebonato@outlook.ie</Link>
         </li>
       </ul>
     </Container>

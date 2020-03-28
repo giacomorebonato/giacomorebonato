@@ -1,11 +1,13 @@
 import React from 'react'
 import { Container, Title, Chapter, Link, P } from '../components'
 import { Seo } from '../components/Seo'
+import { ForkMe } from '../components/ForkMe'
 
 const Index: React.FC = () => {
   return (
     <Container>
       <Seo title='Giacomo Rebonato' />
+      <ForkMe />
       <header>
         <Title>Giacomo Rebonato</Title>
         <div className='text-center'>

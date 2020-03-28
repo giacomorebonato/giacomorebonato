@@ -1,9 +1,11 @@
 import React from 'react'
 import { Container, Title, Chapter, Link, P } from '../components'
+import { Seo } from '../components/Seo'
 
 const Index: React.FC = () => {
   return (
     <Container>
+      <Seo title='Giacomo Rebonato' />
       <header>
         <Title>Giacomo Rebonato</Title>
         <div className='flex justify-center'>

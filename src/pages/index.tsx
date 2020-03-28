@@ -9,7 +9,7 @@ const Index: React.FC = () => {
         <div className='flex justify-center'>
           <img
             className='border border-4 rounded-full'
-            src='/images/avatar.jpg'
+            src={require('../avatar.jpg')}
             alt='A photograph of Giacomo Rebonato'
             width='250'
           />

@@ -13,7 +13,8 @@ const Index: React.FC = () => {
             className='border border-4 rounded-full'
             src={require('../avatar.jpg')}
             alt='A photograph of Giacomo Rebonato'
-            width='250'
+            object-fit='contain'
+            style={{ maxWidth: '250px' }}
           />
         </div>
       </header>

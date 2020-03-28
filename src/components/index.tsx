@@ -1,12 +1,12 @@
 import React from 'react'
 
 export const Container: React.FC = ({ children }) => (
-  <div
+  <main
     className='container mx-auto rounded-sm flex font-sans flex-col p-4 border-gray-600 border mt-1 mb-1'
     style={{ maxWidth: '42rem' }}
   >
     {children}
-  </div>
+  </main>
 )
 
 export const Title: React.FC = ({ children }) => (

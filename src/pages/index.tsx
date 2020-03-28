@@ -1,45 +1,16 @@
 import React from 'react'
-
-const Title: React.FC = ({ children }) => (
-  <h1 className='text-xl font-bold text-gray-800'>{children}</h1>
-)
-
-const Chapter: React.FC = ({ children }) => (
-  <h2 className='font-semibold mt-4 text-xl mb-1'>{children}</h2>
-)
-
-const P: React.FC = ({ children }) => (
-  <p className='text-lg text-gray-800 mb-2'>{children}</p>
-)
-
-interface LinkProps {
-  href: string
-}
-
-const Link: React.FC<LinkProps> = ({ children, href }) => (
-  <a
-    className='text-blue-700 hover:text-blue-800'
-    target='_blank'
-    href={href}
-    rel='noopener noreferrer'
-  >
-    {children}
-  </a>
-)
+import { Container, Title, Chapter, Link, P } from '../components'
 
 const Index: React.FC = () => {
   return (
-    <div
-      className='flex font-sans flex-col p-4 border-gray-600 border-l border-r'
-      style={{ margin: '0 auto', maxWidth: '42rem' }}
-    >
+    <Container>
       <header>
         <Title>Giacomo Rebonato</Title>
         <div className='flex justify-center'>
           <img
             className='border border-4 rounded-full'
             src='/images/avatar.jpg'
-            alt='Sunset in the mountains'
+            alt='A photograph of Giacomo Rebonato'
             width='250'
           />
         </div>
@@ -82,7 +53,7 @@ const Index: React.FC = () => {
           <Link href='mailto:grebonato@outlook.ie'>Email</Link>
         </li>
       </ul>
-    </div>
+    </Container>
   )
 }
 

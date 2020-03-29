@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Title, Chapter, Link, P } from '../components'
 import { Seo } from '../components/Seo'
 import { ForkMe } from '../components/ForkMe'
+import lightHouseLogo from '../lighthouse-logo.svg'
 
 const Index: React.FC = () => {
   return (
@@ -59,6 +60,18 @@ const Index: React.FC = () => {
           <Link href='mailto:grebonato@outlook.ie'>grebonato@outlook.ie</Link>
         </li>
       </ul>
+      <hr className='mt-2 mb-4' />
+      <Link
+        className='flex items-center'
+        href='https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fwww.giacomorebonato.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext'
+      >
+        <img
+          className='w-16 mr-2'
+          src={lightHouseLogo}
+          alt='Test this page on Google Lighthouse'
+        />
+        <span>Test this page on Google Lighthouse</span>
+      </Link>
     </Container>
   )
 }

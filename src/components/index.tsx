@@ -22,12 +22,13 @@ export const P: React.FC = ({ children }) => (
 )
 
 interface LinkProps {
+  className?: string
   href: string
 }
 
-export const Link: React.FC<LinkProps> = ({ children, href }) => (
+export const Link: React.FC<LinkProps> = ({ children, className, href }) => (
   <a
-    className='text-blue-700 hover:text-blue-800'
+    className={`text-blue-700 hover:text-blue-800 ${className}`}
     target='_blank'
     href={href}
     rel='noopener noreferrer'

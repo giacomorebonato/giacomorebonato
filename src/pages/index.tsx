@@ -7,7 +7,7 @@ import lightHouseLogo from '../lighthouse-logo.svg'
 const Index: React.FC = () => {
   return (
     <Container>
-      <Seo title='Giacomo Rebonato' />
+      <Seo title='Home' />
       <ForkMe />
       <header>
         <Title>Giacomo Rebonato</Title>

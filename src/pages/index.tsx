@@ -23,7 +23,13 @@ const Index: React.FC = () => {
       </header>
       <Chapter>Who am I?</Chapter>
       <P>
-        I am a programmer and a musician based in Dublin Ireland.
+        I am a programmer and a musician{' '}
+        <span className='line-through'>based in Dublin Ireland</span> recently
+        moved back to{' '}
+        <Link href='https://en.wikipedia.org/wiki/Verona' className='bl'>
+          Verona (Italy)
+        </Link>
+        , but planning to visit Ireland often.
         <br />
         Passionate about:
       </P>
@@ -38,9 +44,24 @@ const Index: React.FC = () => {
       </ul>
       <Chapter>Other things</Chapter>
       <ul className='list-disc list-inside'>
-        <li>I like movies</li>
-        <li>Playing music</li>
-        <li>People</li>
+        <li>
+          <span role='img' aria-label='pop corns'>
+            🍿
+          </span>{' '}
+          I like movies
+        </li>
+        <li>
+          <span role='img' aria-label='guitar'>
+            🎸
+          </span>{' '}
+          Playing music
+        </li>
+        <li>
+          <span role='img' aria-label='partying with people'>
+            🥳
+          </span>{' '}
+          People
+        </li>
       </ul>
       <Chapter>Contacts</Chapter>
       <ul className='list-disc list-inside leading-loose'>

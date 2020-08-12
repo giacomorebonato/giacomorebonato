@@ -5,6 +5,16 @@ module.exports = {
     author: 'Giacomo Rebonato'
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/md-pages`
+      }
+    },
+    {
+      resolve: 'gatsby-transformer-remark'
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',

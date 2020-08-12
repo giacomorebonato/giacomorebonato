@@ -1,10 +1,16 @@
 import React from 'react'
+import { Link as GatsbyLink } from 'gatsby'
 
 export const Container: React.FC = ({ children }) => (
   <main
     className='relative container mx-auto rounded-sm flex font-sans flex-col p-4 mb-4 lg:border-b lg:border-l lg:border-r border-gray-600'
     style={{ maxWidth: '42rem' }}
   >
+    <header>
+      <Title>
+        <GatsbyLink to='/'>Giacomo Rebonato</GatsbyLink>
+      </Title>
+    </header>
     {children}
   </main>
 )

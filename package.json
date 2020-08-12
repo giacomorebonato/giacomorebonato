@@ -37,6 +37,7 @@
     "gatsby-plugin-sharp": "2.6.24",
     "gatsby-plugin-typescript": "2.4.16",
     "gatsby-source-filesystem": "2.3.23",
+    "gatsby-transformer-remark": "^2.8.28",
     "gatsby-transformer-sharp": "2.5.12",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",

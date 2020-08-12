@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link as GatsbyLink } from 'gatsby'
+
 import { Container, Title, Chapter, Link, P } from '../components'
 import { Seo } from '../components/Seo'
 import { ForkMe } from '../components/ForkMe'
@@ -9,18 +11,15 @@ const Index: React.FC = () => {
     <Container>
       <Seo title='Home' />
       <ForkMe />
-      <header>
-        <Title>Giacomo Rebonato</Title>
-        <div className='text-center'>
-          <img
-            className='border border-4 rounded-full inline'
-            src={require('../avatar.jpg')}
-            alt='A photograph of Giacomo Rebonato'
-            object-fit='contain'
-            style={{ maxWidth: '250px' }}
-          />
-        </div>
-      </header>
+      <div className='text-center'>
+        <img
+          className='border-4 rounded-full inline'
+          src={require('../avatar.jpg')}
+          alt='A photograph of Giacomo Rebonato'
+          object-fit='contain'
+          style={{ maxWidth: '250px' }}
+        />
+      </div>
       <Chapter>Who am I?</Chapter>
       <P>
         I am a programmer and a musician{' '}
@@ -42,6 +41,15 @@ const Index: React.FC = () => {
         <li>GraphQL</li>
         <li>Testing</li>
       </ul>
+
+      <Chapter>Posts</Chapter>
+      <p>
+        <GatsbyLink to='/posts' className='text-blue-700 hover:text-blue-800'>
+          I am writing down here some thoughts.
+        </GatsbyLink>{' '}
+        <br /> Hoping to find the meaningful when I read them again.
+      </p>
+
       <Chapter>Other things</Chapter>
       <ul className='list-disc list-inside'>
         <li>

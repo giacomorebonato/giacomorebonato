@@ -27,10 +27,10 @@ Possible causes:
 Bad sleep to me means to throw the next day straight into the bin, I can survive the workday, but I don't really think soberly.  
 This is a second symptom:
 
-> start to think and doing something and suddenly switching to something else like I
+> start doing something and then finding myself doing something else without having control of myself
 > didn't have control of my concentration, another precious thing to me.
 
 Now the lock down is loosened, but still I find myself disoriented from time to time.
 I am managing may day by day strictly, but trying not to fill every moment; planning one main thing to do the next
-day and trying to put my focus and joy around it.
+day and trying to put my focus and joy around it.  
 It seems something easily achievable... yet I have to be careful that this never goes out of my control.

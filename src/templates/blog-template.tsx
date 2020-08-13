@@ -11,8 +11,10 @@ export default function Template(props: any) {
     <Container>
       <Title>{frontmatter.title}</Title>
       <h2 className='mb-4'>{frontmatter.date}</h2>
-
-      <img src={frontmatter.featuredImage.childImageSharp.fluid.srcWebp} />
+      <img
+        src={frontmatter.featuredImage.childImageSharp.original.src}
+        alt={frontmatter.featuredImageDescription}
+      />
       <div dangerouslySetInnerHTML={{ __html: html }} className='markdown' />
     </Container>
   )
@@ -26,10 +28,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        featuredImageDescription
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              srcWebp
+            original {
+              src
             }
           }
         }

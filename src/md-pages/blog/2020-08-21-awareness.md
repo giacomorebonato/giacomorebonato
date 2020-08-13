@@ -3,11 +3,10 @@ slug: '/posts/awareness'
 title: Awareness during lockdown
 date: '2020-08-11'
 spoiler: How I didn't burn out.
-featuredImage: ./daniel-mingook-kim.jpg
+featuredImage: ./daniel-mingook-kim.webp
 featuredImageDescription: a person with their head against a walls
 ---
 
-<img src='./awareness.webp' />
 <span class='text-sm'>Photo by <a href="https://unsplash.com/@danielmingookkim?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Daniel Mingook Kim</a> on <a href="https://unsplash.com/s/photos/confused?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 During the lockdown I was based by myself in a small apartment in Dublin (Ireland) city centre for more than 3 months.

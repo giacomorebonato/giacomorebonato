@@ -30,6 +30,7 @@ export const pageQuery = graphql`
         title
         featuredImageDescription
         featuredImage {
+          id
           childImageSharp {
             original {
               src

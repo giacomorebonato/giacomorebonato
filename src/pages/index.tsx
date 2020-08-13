@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 
-import { Container, Title, Chapter, Link, P } from '../components'
+import { Container, Chapter, Link, P } from '../components'
 import { Seo } from '../components/Seo'
 import { ForkMe } from '../components/ForkMe'
 import lightHouseLogo from '../lighthouse-logo.svg'

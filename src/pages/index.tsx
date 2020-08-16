@@ -46,8 +46,9 @@ const Index: React.FC = () => {
       <p>
         <GatsbyLink to='/posts' className='text-blue-700 hover:text-blue-800'>
           I am writing down here some thoughts.
-        </GatsbyLink>{' '}
-        <br /> Hoping to find the meaningful when I read them again.
+        </GatsbyLink>
+        <br />
+        Hoping to find them meaningful when I read them again.
       </p>
 
       <Chapter>Other things</Chapter>

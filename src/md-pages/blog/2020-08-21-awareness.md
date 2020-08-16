@@ -9,8 +9,8 @@ featuredImageDescription: a person with their head against a walls
 
 <span class='text-sm'>Photo by <a href="https://unsplash.com/@danielmingookkim?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Daniel Mingook Kim</a> on <a href="https://unsplash.com/s/photos/confused?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
-During the lockdown I was based by myself in a small apartment in Dublin city centre for more than 3 months.
-I worked as a programmer for Zendesk and apart from the intense coding sessions, I liked to fill my day with social activities; coffee, sports... and also some pints of Guinness or IPA with friends.  
+During the lockdown I was based by myself in a small apartment in Dublin city centre for more than 3 months.  
+I worked as a programmer for Zendesk and before the restrictions happened, apart from the intense coding sessions, I liked to fill my day with social activities; coffee, sports... and also some pints of Guinness or IPA with friends.  
 While I was aware that this mix of things was part of building my happiness, I wasn't prepared to react once we were asked to start working from home and all the activities closed. I am sad to admit that my biggest mistake was thinking that everything would have just worked out naturally for me, without planning any strategy.  
 I found myself waking up very early and my energy was gone the next day. It became difficult to separate my office from my home and to dedicate the right amount of time to the hobbies and pleasures that I needed to balance my life.
 I consider myself lucky that neither me or any of my friends got the virus, but mentally I struggled a lot to adapt to the situation.  

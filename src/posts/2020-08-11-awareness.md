@@ -3,7 +3,7 @@ slug: '/posts/awareness'
 title: Awareness during lockdown
 date: '2020-08-11'
 spoiler: How I didn't burn out.
-featuredImage: ./awareness.jpg
+featuredImage: ../images/awareness.jpg
 featuredImageDescription: a person with their head against a walls
 ---
 

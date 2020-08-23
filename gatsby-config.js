@@ -5,17 +5,17 @@ module.exports = {
     author: 'Giacomo Rebonato'
   },
   plugins: [
+    'gatsby-plugin-typescript',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-remark',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/src/md-pages`
+        path: `${__dirname}/src/posts`
       }
     },
-    {
-      resolve: 'gatsby-transformer-remark'
-    },
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -23,6 +23,7 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-purgecss',
@@ -31,9 +32,6 @@ module.exports = {
         purgeOnly: ['src/css/index.css']
       }
     },
-    'gatsby-plugin-typescript',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

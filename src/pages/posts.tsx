@@ -15,7 +15,7 @@ const Posts: React.FC<PostsProps> = ({ data }) => {
           return (
             <Link
               to={frontmatter.slug}
-              className='text-blue-700 hover:text-blue-800'
+              className='text-blue-700 hover:text-blue-800 mb-4'
             >
               <div key={`post-${node.date}`}>
                 <span className='text-sm'>{frontmatter.date}</span>

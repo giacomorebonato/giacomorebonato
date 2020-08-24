@@ -9,11 +9,10 @@ featuredImageDescription: a big family house
 
 <span>Photo by <a href="https://unsplash.com/@ralphkelly?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ralph Kelly</a> on <a href="https://unsplash.com/s/photos/house-family?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
-Only one month ago I moved back living with my parents, it's just a temporary solution, since I declared my independence from them
-long ago, but I am staying with them long enough to consider it not just an holiday.  
+I moved back with my parents one month ago. It's a temporary situation after leaving my apartment in Dublin, but not too short a visit that I'd consider it a holiday.  
 I am on a mission of thanking them by improving the tech side of the house; they are living just fine without me, but I want to
 see if I can do any better from my past self.  
-As a tech lover since young age (I was assembling desktop PC since 8) I changed a lot perspective over the years, now I think that you should avoid
+As a tech lover since young age (I started assembling desktop PC at 8) I changed a lot perspective over the years, now I think that you should avoid
 anything techwise unless is bringin an improvement with seemless integration.  
 So the challenge I am putting myself up for fun is to put care into the tech side of the house and see if my parents appreciate it, without being trained to it too much about it.
 
@@ -45,7 +44,6 @@ The idea is quite good, but I hope it doesn't lead to take to bring the laptop t
 
 ## Conclusion
 
-In the end I don't know what exactly I am doing, my parents don't need to be parented by me and they are doing just happily fine with many healthy
-good habits unrelated to technology.  
-I guess that doing these things is just me expressing myself, still excited about technology that in the end is to me a funny toy, in many different aspects.  
-Even if this is just temporary, I'll try to control myself to leave technology out from what works just fine.
+In the end I don't know why exactly I am doing this. I don't have to look after myy parents since they are doing just fine with old school habits, often unrelated to technology.  
+I guess that using technology is a way of expressing myself, because it makes me feel like a grown up kid playing with a toy.  
+I am controlling myself to leave technology out from what already works just fine... and still sometimes I can't resist.

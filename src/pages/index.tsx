@@ -41,7 +41,6 @@ const Index: React.FC = () => {
         <li>GraphQL</li>
         <li>Testing</li>
       </ul>
-
       <Chapter>Posts</Chapter>
       <p>
         <GatsbyLink to='/posts' className='text-blue-700 hover:text-blue-800'>
@@ -50,7 +49,6 @@ const Index: React.FC = () => {
         <br />
         Hoping to find them meaningful when I read them again.
       </p>
-
       <Chapter>Other things</Chapter>
       <ul className='list-disc list-inside'>
         <li>
@@ -90,6 +88,14 @@ const Index: React.FC = () => {
           <Link href='mailto:grebonato@outlook.ie'>grebonato@outlook.ie</Link>
         </li>
       </ul>
+      <hr className='mt-2 mb-4' />
+      <div className='flex'>
+        <span>Song of the moment:&nbsp;</span>
+        <Link href='https://songwhip.com/khruangbin/pelota'>
+          Pelota by Khruangbin
+        </Link>
+      </div>
+
       <hr className='mt-2 mb-4' />
       <Link
         className='flex items-center'

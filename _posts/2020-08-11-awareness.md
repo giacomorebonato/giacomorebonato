@@ -5,9 +5,8 @@ date: '2020-08-11'
 spoiler: How I didn't burn out.
 featuredImage: awareness.jpg
 featuredImageDescription: a person with their head against a walls
+photoBy: danielmingookkim
 ---
-
-<span class='text-sm'>Photo by <a href="https://unsplash.com/@danielmingookkim?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Daniel Mingook Kim</a> on <a href="https://unsplash.com/s/photos/confused?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 During the lockdown I was based by myself in a small apartment in Dublin city centre for more than 3 months.  
 I worked as a programmer for Zendesk and before the restrictions happened, apart from the intense coding sessions, I liked to fill my day with social activities; coffee, sports... and also some pints of Guinness or IPA with friends.  

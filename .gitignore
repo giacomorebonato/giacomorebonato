@@ -24,4 +24,6 @@ npm-debug.log*
 .env.production.local
 
 # vercel
+.cache
+.now
 .vercel

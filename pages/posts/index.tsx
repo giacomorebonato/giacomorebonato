@@ -15,18 +15,18 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
       </Head>
 
       <Chapter>Posts</Chapter>
-      <section tw="flex flex-col">
+      <section tw='flex flex-col'>
         {posts.map((post: any) => {
           return (
             <a
               href={`/posts/${post.slug}`}
               key={post.slug}
-              tw="text-blue-700 hover:text-blue-800 mb-4 block"
+              tw='hover:bg-red-100 hover:bg-opacity-25 p-2'
             >
-              <div key={`post-${post.date}`}>
-                <span tw="text-sm">{post.date}</span>
-                <h3 tw="text-lg font-bold">{post.title}</h3>
-                <p>{post.spoiler}</p>
+              <div key={`post-${post.date}`} tw='mb-4 block'>
+                <span tw='text-sm text-blue-400'>{post.date}</span>
+                <h3 tw='text-lg font-bold text-blue-300'>{post.title}</h3>
+                <p tw='text-blue-200'>{post.spoiler}</p>
               </div>
             </a>
           )
@@ -41,8 +41,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts
-    }
+      posts,
+    },
   }
 }
 

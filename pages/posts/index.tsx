@@ -21,7 +21,7 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
             <a
               href={`/posts/${post.slug}`}
               key={post.slug}
-              tw='hover:bg-red-100 hover:bg-opacity-25 p-2'
+              tw='hover:bg-red-100 hover:bg-opacity-10 p-2'
             >
               <div key={`post-${post.date}`} tw='mb-4 block'>
                 <span tw='text-sm text-blue-400'>{post.date}</span>

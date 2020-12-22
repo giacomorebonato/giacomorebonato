@@ -91,7 +91,7 @@ const Index: React.FC = () => {
         </li>
       </ul>
       <hr tw='mt-2 mb-4' />
-      <div tw='flex'>
+      <div tw='flex mb-2'>
         <Text>Song of the moment:&nbsp;</Text>
         <Link href='https://songwhip.com/myd/moving-men'>
           Moving Men by Myd {'&'} Mac DeMarco

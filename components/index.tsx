@@ -32,7 +32,7 @@ export const Container: React.FC<any> = ({ css, children }) => {
   return (
     <main
       css={[markdownStyles]}
-      tw='relative container mx-auto rounded-sm flex font-sans flex-col p-4 pb-10 mb-4 lg:border-b lg:border-l lg:border-r border-gray-600'
+      tw='relative container mx-auto rounded-sm flex font-sans flex-col p-4 pb-10 mb-4 lg:border-b lg:border-l lg:border-r border-gray-600 min-h-screen'
       style={{ maxWidth: '42rem', margin: '0 auto' }}
     >
       <GlobalStyles />

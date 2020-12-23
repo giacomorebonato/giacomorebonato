@@ -1,23 +1,56 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { GlobalStyles } from 'twin.macro'
 import NextLink from 'next/link'
 import { markdownStyles } from '../lib/markdown-styles'
 
-export const Container: React.FC<any> = ({ css, children }) => (
-  <main
-    css={[markdownStyles]}
-    tw='relative container mx-auto rounded-sm flex font-sans flex-col p-4 mb-4 lg:border-b lg:border-l lg:border-r border-gray-600'
-    style={{ maxWidth: '42rem', margin: '0 auto' }}
-  >
-    <GlobalStyles />
-    <header>
-      <Title>
-        <NextLink href='/'>Giacomo Rebonato</NextLink>
-      </Title>
-    </header>
-    {children}
-  </main>
-)
+const toggleDarkMode = () => {
+  const html = document.getElementsByTagName('html')[0]!
+
+  localStorage.darkMode = html.classList.toggle('dark')
+}
+
+const DarkmodeSwitch = () => {
+  return (
+    <button
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        right: 0,
+      }}
+      tw='p-2 border-l-2 border-t-2 border-gray-50'
+      onClick={() => {
+        toggleDarkMode()
+      }}
+    >
+      <Text>Dark mode</Text>
+    </button>
+  )
+}
+
+export const Container: React.FC<any> = ({ css, children }) => {
+  useEffect(() => {
+    if (localStorage.darkMode === 'true') {
+      toggleDarkMode()
+    }
+  }, [])
+
+  return (
+    <main
+      css={[markdownStyles]}
+      tw='relative container mx-auto rounded-sm flex font-sans flex-col p-4 mb-4 lg:border-b lg:border-l lg:border-r border-gray-600'
+      style={{ maxWidth: '42rem', margin: '0 auto' }}
+    >
+      <GlobalStyles />
+      <header>
+        <Title>
+          <NextLink href='/'>Giacomo Rebonato</NextLink>
+        </Title>
+      </header>
+      {children}
+      <DarkmodeSwitch />
+    </main>
+  )
+}
 
 interface BasicUIProps {
   className?: string

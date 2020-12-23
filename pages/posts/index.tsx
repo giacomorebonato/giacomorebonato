@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import 'twin.macro'
 
-import { Chapter, Container } from '../../components'
+import { Chapter, Container, Text, Title } from '../../components'
 import { getAllPosts } from '../../lib/post-helpers'
 
 type PostsProps = { posts: any }
@@ -21,12 +21,12 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
             <a
               href={`/posts/${post.slug}`}
               key={post.slug}
-              tw='hover:bg-red-100 hover:bg-opacity-10 p-2'
+              tw='dark:hover:bg-blue-50 hover:bg-red-400 hover:bg-opacity-10 dark:hover:bg-opacity-10 p-2 rounded'
             >
               <div key={`post-${post.date}`} tw='mb-4 block'>
-                <span tw='text-sm text-blue-400'>{post.date}</span>
-                <h3 tw='text-lg font-bold text-blue-300'>{post.title}</h3>
-                <p tw='text-blue-200'>{post.spoiler}</p>
+                <Chapter tw='text-sm text-blue-400'>{post.date}</Chapter>
+                <Title tw='text-lg font-bold text-blue-300'>{post.title}</Title>
+                <Text tw='text-blue-200'>{post.spoiler}</Text>
               </div>
             </a>
           )

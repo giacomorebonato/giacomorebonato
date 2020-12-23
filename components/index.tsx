@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { GlobalStyles } from 'twin.macro'
+import tw, { GlobalStyles } from 'twin.macro'
 import NextLink from 'next/link'
 import { markdownStyles } from '../lib/markdown-styles'
 
@@ -12,12 +12,12 @@ const toggleDarkMode = () => {
 const DarkmodeSwitch = () => {
   return (
     <button
-      tw='p-2 border-gray-600 border-l border-t border-gray-50 absolute bottom-0 right-0'
+      tw='p-2 border-gray-600 border-l border-t border-gray-50 absolute bottom-0 right-0 dark:line-through'
       onClick={() => {
         toggleDarkMode()
       }}
     >
-      <Text>Dark mode</Text>
+      <Text tw='line-through dark:no-underline'>Dark mode</Text>
     </button>
   )
 }
@@ -55,7 +55,7 @@ interface BasicUIProps {
   }
 }
 
-export const Text: React.FC = ({ children }) => (
+export const Text: React.FC<BasicUIProps> = ({ children }) => (
   <span tw='text-gray-800 dark:text-red-100'>{children}</span>
 )
 

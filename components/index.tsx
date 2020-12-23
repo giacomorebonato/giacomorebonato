@@ -12,12 +12,7 @@ const toggleDarkMode = () => {
 const DarkmodeSwitch = () => {
   return (
     <button
-      style={{
-        position: 'fixed',
-        bottom: 0,
-        right: 0,
-      }}
-      tw='p-2 border-l-2 border-t-2 border-gray-50'
+      tw='p-2 border-gray-600 border-l border-t border-gray-50 absolute bottom-0 right-0'
       onClick={() => {
         toggleDarkMode()
       }}
@@ -55,7 +50,9 @@ export const Container: React.FC<any> = ({ css, children }) => {
 interface BasicUIProps {
   className?: string
   tw?: string
-  dangerouslySetInnerHTML?: any
+  dangerouslySetInnerHTML?: {
+    __html: string
+  }
 }
 
 export const Text: React.FC = ({ children }) => (
@@ -75,14 +72,18 @@ export const Chapter: React.FC = ({ children }) => (
 export const P: React.FC<BasicUIProps> = ({
   children,
   dangerouslySetInnerHTML,
-}) => (
-  <p
-    tw='text-lg text-gray-800 dark:text-red-50 mb-2'
-    dangerouslySetInnerHTML={dangerouslySetInnerHTML}
-  >
-    {children}
-  </p>
-)
+}) => {
+  return dangerouslySetInnerHTML ? (
+    <div
+      tw='text-lg text-gray-800 dark:text-red-50 mb-2'
+      dangerouslySetInnerHTML={{
+        __html: dangerouslySetInnerHTML.__html,
+      }}
+    />
+  ) : (
+    <p tw='text-lg text-gray-800 dark:text-red-50 mb-2'>{children}</p>
+  )
+}
 
 interface LinkProps {
   className?: string

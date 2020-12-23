@@ -25,14 +25,14 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
         <title>{post.title} | Giacomo Rebonato</title>
       </Head>
 
-      <meta name="description" content="Information about Giacomo Rebonato" />
+      <meta name='description' content='Information about Giacomo Rebonato' />
       <Chapter>{post.title}</Chapter>
-      <h2 tw="mb-4 text-gray-800 dark:text-red-100">{post.date}</h2>
+      <h2 tw='mb-4 text-gray-800 dark:text-red-100'>{post.date}</h2>
       <img
         src={`/images/${post.featuredImage}`}
         alt={post.featuredImageDescription}
       />
-      <span tw="text-sm mb-4 mt-1 text-gray-800 dark:text-red-300">
+      <span tw='text-sm mb-4 mt-1 text-gray-800 dark:text-red-300'>
         Photo by{' '}
         <a
           href={`https://unsplash.com/@${post.photoBy}?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText`}
@@ -40,13 +40,13 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
           Ralph Kelly
         </a>{' '}
         on{' '}
-        <a href="https://unsplash.com/s/photos/house-family?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+        <a href='https://unsplash.com/s/photos/house-family?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText'>
           Unsplash
         </a>
       </span>
       <P
         dangerouslySetInnerHTML={{ __html: post.content }}
-        className="markdown"
+        className='markdown'
       />
     </Container>
   )
@@ -61,7 +61,7 @@ export async function getStaticProps({ params }) {
     'featuredImage',
     'featuredImageDescription',
     'content',
-    'photoBy'
+    'photoBy',
   ])
   const content = await markdownToHtml(post.content || '')
 
@@ -69,9 +69,9 @@ export async function getStaticProps({ params }) {
     props: {
       post: {
         ...post,
-        content
-      }
-    }
+        content,
+      },
+    },
   }
 }
 
@@ -82,10 +82,10 @@ export async function getStaticPaths() {
     paths: posts.map((post) => {
       return {
         params: {
-          slug: post.slug
-        }
+          slug: post.slug,
+        },
       }
     }),
-    fallback: false
+    fallback: false,
   }
 }

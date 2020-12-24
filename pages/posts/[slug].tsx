@@ -44,7 +44,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
         <a
           href={`https://unsplash.com/@${post.photoBy}?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText`}
         >
-          Ralph Kelly
+          {post.photoBy}
         </a>{' '}
         on{' '}
         <a href='https://unsplash.com/s/photos/house-family?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText'>

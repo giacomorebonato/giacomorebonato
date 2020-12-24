@@ -2,7 +2,7 @@
 slug: test-execution-time-in-node
 title: Test execution time in node
 date: '2020-12-24'
-spoiler: How we can test execution time in NodeJS.
+spoiler: How we can test execution time in NodeJS, to make sure that code is executing in parallel.
 featuredImage: racing.jpg
 featuredImageDescription: a running group
 photoBy: jon_chng

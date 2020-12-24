@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
 import NextLink from 'next/link'
-import { markdownStyles } from '../lib/markdown-styles'
 import { Toggle } from './Toggle'
 import { useDarkMode } from './useDarkMode'
 

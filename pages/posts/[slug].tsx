@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
-import Prism from 'Prismjs'
+import Prism from 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import { Chapter, Container, P } from '../../components'
 import markdownToHtml from '../../lib/markdown-to-html'

@@ -1,48 +1,34 @@
-import React, { useEffect } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
 import NextLink from 'next/link'
 import { markdownStyles } from '../lib/markdown-styles'
-
-const toggleDarkMode = () => {
-  const html = document.getElementsByTagName('html')[0]!
-
-  localStorage.darkMode = html.classList.toggle('dark')
-}
-
-const DarkmodeSwitch = () => {
-  return (
-    <button
-      tw='p-2 border-gray-600 border-l border-t border-gray-50 absolute bottom-0 right-0 dark:line-through'
-      onClick={() => {
-        toggleDarkMode()
-      }}
-    >
-      <Text tw='line-through dark:no-underline'>Dark mode</Text>
-    </button>
-  )
-}
+import { Toggle } from './Toggle'
+import { useDarkMode } from './useDarkMode'
 
 export const Container: React.FC<any> = ({ css, children }) => {
-  useEffect(() => {
-    if (localStorage.darkMode === 'true') {
-      toggleDarkMode()
-    }
-  }, [])
+  const [isDark, setDarkMode] = useDarkMode()
 
   return (
     <main
       css={[markdownStyles]}
-      tw='relative container mx-auto rounded-sm flex font-sans flex-col p-4 pb-10 mb-4 lg:border-b lg:border-l lg:border-r border-gray-600 min-h-screen'
+      tw='relative container mx-auto rounded-sm flex font-sans flex-col p-4 mb-4 lg:border-l lg:border-r border-gray-600 min-h-screen'
       style={{ maxWidth: '42rem', margin: '0 auto' }}
     >
       <GlobalStyles />
-      <header>
+      <header tw='mb-4'>
         <Title>
           <NextLink href='/'>Giacomo Rebonato</NextLink>
         </Title>
+        <Toggle
+          checked={isDark}
+          name='dark-mode'
+          text='Dark mode'
+          onChange={(e) => {
+            setDarkMode(e.target.checked)
+          }}
+        />
       </header>
       {children}
-      <DarkmodeSwitch />
     </main>
   )
 }

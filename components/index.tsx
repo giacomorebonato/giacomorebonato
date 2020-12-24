@@ -8,9 +8,10 @@ import { useDarkMode } from './useDarkMode'
 export const Container: React.FC<any> = ({ css, children }) => {
   const [isDark, setDarkMode] = useDarkMode()
 
+  console.log(markdownStyles)
+
   return (
     <main
-      css={[markdownStyles]}
       tw='relative container mx-auto rounded-sm flex font-sans flex-col p-4 mb-4 lg:border-l lg:border-r border-gray-600 min-h-screen'
       style={{ maxWidth: '42rem', margin: '0 auto' }}
     >

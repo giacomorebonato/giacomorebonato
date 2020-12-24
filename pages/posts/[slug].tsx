@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
+import Prism from 'Prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
 import { Chapter, Container, P } from '../../components'
 import markdownToHtml from '../../lib/markdown-to-html'
 import { getAllPosts, getPostBySlug } from '../../lib/post-helpers'
 import 'twin.macro'
+import { markdownStyles } from '../../lib/markdown-styles'
 
 type Post = {
   title: string
@@ -19,6 +22,10 @@ type PostTemplateProps = {
 }
 
 const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
+  useEffect(() => {
+    Prism.highlightAll()
+  }, [])
+
   return (
     <Container>
       <Head>
@@ -44,10 +51,12 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
           Unsplash
         </a>
       </span>
-      <P
-        dangerouslySetInnerHTML={{ __html: post.content }}
-        className='markdown'
-      />
+      <section css={[markdownStyles]}>
+        <P
+          dangerouslySetInnerHTML={{ __html: post.content }}
+          className='markdown'
+        />
+      </section>
     </Container>
   )
 }

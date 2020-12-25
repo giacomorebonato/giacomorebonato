@@ -11,18 +11,17 @@ photoBy: jon_chng
 I have been fine tuning AWS Lambda with my friend Franco.  
 The concern is not only peformance, but also costs, since [charges are made per execution time](https://aws.amazon.com/lambda/pricing/).  
 One of the common improvements is to make sure that async IO events like queries or requests are parallelized.  
-Imagine the following scenario, you're executing 3 independent query and awaiting all three of them.  
+Imagine the following scenario, you're executing three independent queries and awaiting all three of them.  
 
 ```js
 const handler = async () => {
   await executeQuery1() // Takes 5 seconds
   await executeQuery2() // Takes 5 seconds
   await executeQuery3() // Takes 5 seconds
-                        // Total time 15 seconds
-}
+}                       // Total time 15 seconds
 ```
 
-The problem is that those query are not running in parallel, luckily JavaScript handles very well this scenario.  
+The problem is that those queries are not running in parallel, luckily JavaScript handles very well this scenario.  
 The code needs to change to something like this to achieve parallelization.
 
 ```js
@@ -67,6 +66,7 @@ describe('handler', () => {
   
       const end = performance.now()
   
+      expect(mock).toHaveBeenCalledTimes(5);
       expect(end - start).toBeGreaterThan(1000)
       expect(end - start).toBeLessThan(1500)
     })

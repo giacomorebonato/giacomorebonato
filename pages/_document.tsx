@@ -1,16 +1,26 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import 'twin.macro'
+import { extractCritical } from '@emotion/server'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const page = await ctx.renderPage()
+    const styles = extractCritical(page.html)
+
+    return { ...initialProps, ...page, ...styles }
   }
 
   render() {
+    const props = this.props as any
+
     return (
       <Html lang='en'>
         <Head>
+          <style
+            data-emotion-css={props.ids.join(' ')}
+            dangerouslySetInnerHTML={{ __html: props.css }}
+          />
           <link
             rel='apple-touch-icon'
             sizes='57x57'

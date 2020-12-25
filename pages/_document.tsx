@@ -1,10 +1,15 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { extractCritical } from '@emotion/server'
+
 import 'twin.macro'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const page = await ctx.renderPage()
+    const styles = extractCritical(page.html)
+
+    return { ...initialProps, ...page, ...styles }
   }
 
   render() {

@@ -26,11 +26,13 @@ The code needs to change to something like this to achieve parallelization.
 
 ```js
 const handler = async () => {
-  await Promise.all([
+  const [data1, data2, data3] = await Promise.all([
     executeQuery1() // Takes 5 seconds
     executeQuery2() // Takes 5 seconds
     executeQuery3() // Takes 5 seconds
   ])                // Total time (around) 5 seconds!
+
+  // use your query data
 }
 ```
 

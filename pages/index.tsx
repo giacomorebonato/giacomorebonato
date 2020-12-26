@@ -93,7 +93,7 @@ const Index: React.FC = () => {
       <hr tw='mt-2 mb-4' />
       <div tw='flex mb-2'>
         <Text>Song of the moment:&nbsp;</Text>
-        <Link href='https://songwhip.com/myd/moving-men'>
+        <Link href='https://songwhip.com/myd/moving-men' external>
           Moving Men by Myd {'&'} Mac DeMarco
         </Link>
       </div>
@@ -102,6 +102,7 @@ const Index: React.FC = () => {
       <Link
         tw='flex items-center'
         href='https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fwww.giacomorebonato.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext'
+        external
       >
         <img
           tw='w-16 mr-2'

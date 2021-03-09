@@ -1,8 +1,16 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
+const getDarkFromHtml = () => {
+  if (typeof document === 'undefined') {
+    return false
+  }
+
+  const html = document.getElementsByTagName('html')[0]!
+  return html.classList.contains('dark')
+}
+
 const toggleDarkMode = (makeDark: boolean) => {
   const html = document.getElementsByTagName('html')[0]!
-
   if (makeDark) {
     html.classList.add('dark')
     localStorage.darkMode = true
@@ -12,20 +20,13 @@ const toggleDarkMode = (makeDark: boolean) => {
   }
 }
 
-const getDarkModeSetting = () => {
-  if (!process.browser) {
-    return false
-  }
-
-  return localStorage.getItem('darkMode') === 'true'
-}
-
 export const useDarkMode = (): [boolean, Dispatch<SetStateAction<boolean>>] => {
-  const savedState = getDarkModeSetting()
-  const [isDark, setDarkMode] = useState(savedState)
+  const [isDark, setDarkMode] = useState<boolean>(getDarkFromHtml())
 
   useEffect(() => {
-    toggleDarkMode(isDark)
+    if (isDark !== getDarkFromHtml()) {
+      toggleDarkMode(isDark)
+    }
   }, [isDark])
 
   return [isDark, setDarkMode]

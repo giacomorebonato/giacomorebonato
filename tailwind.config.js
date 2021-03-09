@@ -1,6 +1,5 @@
 module.exports = {
   darkMode: 'class',
-  prefix: 'tw-',
   theme: {
     extend: {
       colors: {

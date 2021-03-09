@@ -1,6 +1,6 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import { GlobalStyles } from 'twin.macro'
 import NextLink from 'next/link'
+import React from 'react'
+import { GlobalStyles } from 'twin.macro'
 import { Toggle } from './Toggle'
 import { useDarkMode } from './useDarkMode'
 

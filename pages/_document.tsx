@@ -1,9 +1,16 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import 'twin.macro'
 import { extractCritical } from '@emotion/server'
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document'
+import 'twin.macro'
+import { Favicons } from '../components/Favicons'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
     const page = await ctx.renderPage()
     const styles = extractCritical(page.html)
@@ -17,79 +24,22 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              const html = document.getElementsByTagName('html')[0]
+              
+              if (localStorage.darkMode === 'true') {
+                html.classList.add('dark')
+              }
+            `,
+            }}
+          />
           <style
             data-emotion-css={props.ids.join(' ')}
             dangerouslySetInnerHTML={{ __html: props.css }}
           />
-          <link
-            rel='apple-touch-icon'
-            sizes='57x57'
-            href='/favicon/apple-icon-57x57.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='60x60'
-            href='/favicon/apple-icon-60x60.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='72x72'
-            href='/favicon/apple-icon-72x72.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='76x76'
-            href='/favicon/apple-icon-76x76.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='114x114'
-            href='/favicon/apple-icon-114x114.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='120x120'
-            href='/favicon/apple-icon-120x120.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='144x144'
-            href='/favicon/apple-icon-144x144.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='152x152'
-            href='/favicon/apple-icon-152x152.png'
-          />
-          <link
-            rel='apple-touch-icon'
-            sizes='180x180'
-            href='/favicon/apple-icon-180x180.png'
-          />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='192x192'
-            href='/favicon/android-icon-192x192.png'
-          />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='32x32'
-            href='/favicon/favicon-32x32.png'
-          />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='96x96'
-            href='/favicon/favicon-96x96.png'
-          />
-          <link
-            rel='icon'
-            type='image/png'
-            sizes='16x16'
-            href='/favicon/favicon-16x16.png'
-          />
+          <Favicons />
           <link rel='manifest' href='/favicon/manifest.json' />
           <meta name='msapplication-TileColor' content='#ffffff' />
           <meta
@@ -98,7 +48,7 @@ class MyDocument extends Document {
           />
           <meta name='theme-color' content='#ffffff' />
         </Head>
-        <body tw='bg-white dark:bg-gray-800'>
+        <body tw='bg-white dark:bg-gray-800 transition-colors duration-300'>
           <Main />
           <NextScript />
         </body>

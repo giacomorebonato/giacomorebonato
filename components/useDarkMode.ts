@@ -15,9 +15,7 @@ const isHtmlDark = () => {
 const toggleDarkMode = (makeDark: boolean) => {
   const html = getHtml()
 
-  if (!html) {
-    return
-  }
+  if (!html) return
 
   html.classList[makeDark ? 'add' : 'remove']('dark')
   localStorage.darkMode = makeDark

@@ -8,7 +8,7 @@ export const Contacts: React.FC = () => (
     <ul tw='list-disc list-inside text-gray-800 dark:text-red-100 leading-loose'>
       <li>
         <Link external href='https://github.com/giacomorebonato/'>
-          Github
+          GitHub
         </Link>
       </li>
       <li>

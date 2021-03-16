@@ -8,7 +8,7 @@ const ToggleWrapper = styled.div`
   .toggle__dot {
     top: -0.25rem;
     left: -0.25rem;
-    transition: all 0.3s ease-in-out;
+    ${tw`transition ease-in duration-100`}
   }
 
   input:checked ~ .toggle__dot {

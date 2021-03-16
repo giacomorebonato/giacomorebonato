@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react'
-import tw, { css, GlobalStyles, styled } from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 import { Text } from '.'
 
 const ToggleWrapper = styled.div`
@@ -13,9 +13,6 @@ const ToggleWrapper = styled.div`
 
   input:checked ~ .toggle__dot {
     transform: translateX(100%);
-  }
-
-  input:checked ~ .toggle__dot {
     ${tw`bg-gray-800 dark:bg-red-300`}
   }
 `

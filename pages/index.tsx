@@ -34,7 +34,9 @@ const Index: React.FC = () => {
         I am a programmer and a musician{' '}
         <span tw='line-through'>based in Dublin Ireland</span> recently moved
         back to{' '}
-        <Link href='https://en.wikipedia.org/wiki/Verona'>Verona (Italy)</Link>
+        <Link href='https://en.wikipedia.org/wiki/Verona' external>
+          Verona (Italy)
+        </Link>
         , but planning to visit Ireland often.
         <br />
         Passionate about:

@@ -27,6 +27,7 @@ class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
+              console.log('First page load')
               const html = document.getElementsByTagName('html')[0]
               
               if (localStorage.darkMode === 'true') {

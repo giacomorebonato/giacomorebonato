@@ -12,8 +12,7 @@ const ToggleWrapper = styled.div`
   }
 
   input:checked ~ .toggle__dot {
-    transform: translateX(100%);
-    ${tw`bg-gray-800 dark:bg-red-300`}
+    ${tw`bg-gray-800 dark:bg-red-300 transform translate-x-full`}
   }
 `
 

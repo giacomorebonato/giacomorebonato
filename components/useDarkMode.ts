@@ -1,30 +1,33 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
-const getDarkFromHtml = () => {
+const getHtml = (): HTMLHtmlElement | undefined => {
   if (typeof document === 'undefined') {
-    return false
+    return
   }
 
-  const html = document.getElementsByTagName('html')[0]!
-  return html.classList.contains('dark')
+  return document.getElementsByTagName('html')[0]!
+}
+
+const isHtmlDark = () => {
+  return getHtml()?.classList.contains('dark')
 }
 
 const toggleDarkMode = (makeDark: boolean) => {
-  const html = document.getElementsByTagName('html')[0]!
-  if (makeDark) {
-    html.classList.add('dark')
-    localStorage.darkMode = true
-  } else {
-    html.classList.remove('dark')
-    localStorage.darkMode = false
+  const html = getHtml()
+
+  if (!html) {
+    return
   }
+
+  html.classList[makeDark ? 'add' : 'remove']('dark')
+  localStorage.darkMode = makeDark
 }
 
 export const useDarkMode = (): [boolean, Dispatch<SetStateAction<boolean>>] => {
-  const [isDark, setDarkMode] = useState<boolean>(getDarkFromHtml())
+  const [isDark, setDarkMode] = useState<boolean>(isHtmlDark())
 
   useEffect(() => {
-    if (isDark !== getDarkFromHtml()) {
+    if (isDark !== isHtmlDark()) {
       toggleDarkMode(isDark)
     }
   }, [isDark])

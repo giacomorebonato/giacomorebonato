@@ -27,5 +27,12 @@ npm-debug.log*
 .cache
 .now
 .vercel
-.yarn
 out
+
+# yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

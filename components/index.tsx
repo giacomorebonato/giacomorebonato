@@ -75,19 +75,22 @@ interface LinkProps {
   href: string
 }
 
+export { NextLink }
+
 export const Link: React.FC<LinkProps> = ({
   children,
   className,
   href,
   external,
 }) => (
-  <a
-    tw='text-blue-700 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500'
-    className={className}
-    target={external && 'blank'}
-    href={href}
-    rel='noopener noreferrer'
-  >
-    {children}
-  </a>
+  <NextLink passHref href={href}>
+    <a
+      tw='text-blue-700 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500'
+      className={className}
+      target={external && 'blank'}
+      rel='noopener noreferrer'
+    >
+      {children}
+    </a>
+  </NextLink>
 )

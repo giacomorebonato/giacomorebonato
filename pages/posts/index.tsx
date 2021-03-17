@@ -1,7 +1,7 @@
-import React from 'react'
 import Head from 'next/head'
+import NextLink from 'next/link'
+import React from 'react'
 import 'twin.macro'
-
 import { Chapter, Container, Text, Title } from '../../components'
 import { getAllPosts } from '../../lib/post-helpers'
 
@@ -18,17 +18,24 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
       <section tw='flex flex-col'>
         {posts.map((post: any) => {
           return (
-            <a
+            <NextLink
               href={`/posts/${post.slug}`}
-              key={post.slug}
-              tw='dark:hover:bg-blue-50 hover:bg-red-400 hover:bg-opacity-10 dark:hover:bg-opacity-10 p-2 rounded'
+              passHref
+              key={`post-${post.date}`}
             >
-              <div key={`post-${post.date}`} tw='mb-4 block'>
-                <Chapter tw='text-sm text-blue-400'>{post.date}</Chapter>
-                <Title tw='text-lg font-bold text-blue-300'>{post.title}</Title>
-                <Text tw='text-blue-200'>{post.spoiler}</Text>
-              </div>
-            </a>
+              <a
+                key={post.slug}
+                tw='dark:hover:bg-blue-50 hover:bg-red-400 hover:bg-opacity-10 dark:hover:bg-opacity-10 p-2 rounded'
+              >
+                <div tw='mb-4 block'>
+                  <Chapter tw='text-sm text-blue-400'>{post.date}</Chapter>
+                  <Title tw='text-lg font-bold text-blue-300'>
+                    {post.title}
+                  </Title>
+                  <Text tw='text-blue-200'>{post.spoiler}</Text>
+                </div>
+              </a>
+            </NextLink>
           )
         })}
       </section>

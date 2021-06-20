@@ -54,8 +54,8 @@ const Index: React.FC = () => {
       <hr tw='mt-2 mb-4' />
       <div tw='flex mb-2'>
         <Text>Song of the moment:&nbsp;</Text>
-        <Link href='https://songwhip.com/myd/moving-men' external>
-          Moving Men by Myd {'&'} Mac DeMarco
+        <Link href='https://songwhip.com/jdmglobal/get-back' external>
+          Get Back by JDM Global
         </Link>
       </div>
 

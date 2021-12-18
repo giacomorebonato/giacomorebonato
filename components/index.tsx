@@ -1,8 +1,10 @@
-import NextLink from 'next/link'
+import { Box, Text as ChakraText, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
-import 'twin.macro'
+export { Chapter } from './chapter'
 export { Container } from './Container'
-export { NextLink }
+export { MyLink } from './my-link'
+export { MySection } from './my-section'
+export { Title } from './title'
 
 interface BasicUIProps {
   className?: string
@@ -12,33 +14,32 @@ interface BasicUIProps {
   }
 }
 
-export const Text: React.FC<BasicUIProps> = ({ children }) => (
-  <span tw='text-gray-800 dark:text-red-100'>{children}</span>
-)
+export const Text: React.FC<BasicUIProps> = ({ children }) => {
+  const color = useColorModeValue('gray.800', 'red.100')
 
-export const Title: React.FC = ({ children }) => (
-  <h1 tw='text-2xl font-bold text-gray-800 dark:text-red-400 mb-2'>
-    {children}
-  </h1>
-)
-
-export const Chapter: React.FC = ({ children }) => (
-  <h2 tw='font-semibold mt-4 text-xl mb-1 dark:text-red-300'>{children}</h2>
-)
+  return <ChakraText color={color}>{children}</ChakraText>
+}
 
 export const P: React.FC<BasicUIProps> = ({
   children,
-  dangerouslySetInnerHTML,
+  dangerouslySetInnerHTML
 }) => {
+  const color = useColorModeValue('gray.800', 'red.50')
+
   return dangerouslySetInnerHTML ? (
-    <div
-      tw='text-lg text-gray-800 dark:text-red-50 mb-2'
+    <Box
+      as='p'
+      color={color}
+      fontSize='lg'
+      mb='2'
       dangerouslySetInnerHTML={{
-        __html: dangerouslySetInnerHTML.__html,
+        __html: dangerouslySetInnerHTML.__html
       }}
     />
   ) : (
-    <p tw='text-lg text-gray-800 dark:text-red-50 mb-2'>{children}</p>
+    <Box fontSize='lg' color={color} mb='2'>
+      {children}
+    </Box>
   )
 }
 
@@ -47,21 +48,3 @@ interface LinkProps {
   external?: boolean
   href: string
 }
-
-export const Link: React.FC<LinkProps> = ({
-  children,
-  className,
-  href,
-  external,
-}) => (
-  <NextLink passHref href={href}>
-    <a
-      tw='text-blue-700 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-500'
-      className={className}
-      target={external && 'blank'}
-      rel='noopener noreferrer'
-    >
-      {children}
-    </a>
-  </NextLink>
-)

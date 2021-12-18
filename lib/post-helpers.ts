@@ -1,17 +1,17 @@
 import fs from 'fs'
-import { join } from 'path'
 import matter from 'gray-matter'
-import { pathToFileURL } from 'url'
+import { join } from 'path'
+import { Post } from '../@types/post'
 
 const POSTS_DIRECTORY = join(process.cwd(), '_posts')
 
-export function getPostFiles() {
+export function getPostFilenames() {
   return fs.readdirSync(POSTS_DIRECTORY)
 }
 
 const getPostPathBySlug = (slug: string) => {
-  const postFiles = getPostFiles()
-  const postFile = postFiles.find(postFile => postFile.includes(slug))
+  const postFilenames = getPostFilenames()
+  const postFile = postFilenames.find((postFile) => postFile.includes(slug))
 
   if (!postFile) {
     throw Error(`Couldn't find post file with slug ${slug}`)
@@ -20,36 +20,55 @@ const getPostPathBySlug = (slug: string) => {
   return join(POSTS_DIRECTORY, postFile)
 }
 
-export function getPostBySlug(slug, fields = []): any {
-  const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(getPostPathBySlug(realSlug))
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
-
-  const items = {}
+export function getPostByFilename(
+  filename: string,
+  postFields: Array<keyof Post>
+): Partial<Post> & { date: Date } {
+  const filenameWithNoExtension = filename.replace(/\.mdx$/, '')
+  const [year, month, day] = filenameWithNoExtension.split('-').slice(0, 3)
+  const date = new Date(+year, +month + -1, +day)
+  const fullPath = join(getPostPathBySlug(filenameWithNoExtension))
+  const fileContent = fs.readFileSync(fullPath, 'utf8')
+  const frontMatter = matter(fileContent)
+  const post: Partial<Post> & { date: Date } = {
+    date
+  }
 
   // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug
-    }
-    if (field === 'content') {
-      items[field] = content
-    }
-
-    if (data[field]) {
-      items[field] = data[field]
+  postFields.forEach((field) => {
+    switch (field) {
+      case 'slug':
+        post[field] = filenameWithNoExtension
+        break
+      case 'content':
+        post[field] = frontMatter.content
+        break
+      default:
+        if (frontMatter.data[field]) {
+          post[field] = frontMatter.data[field]
+        }
     }
   })
 
-  return items
+  return post
 }
 
-export function getAllPosts(fields = []) {
-  const slugs = getPostFiles()
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+interface BasePost {
+  date: Date
+}
+
+/**
+ * Get all the posts content
+ * @param fields - Fields to fetch from the post
+ * @returns
+ */
+export function getAllPosts(fields: Array<keyof Post> = []) {
+  const filenames = getPostFilenames()
+  const posts = filenames
+    .map((filename) => getPostByFilename(filename, fields))
+    .filter(Boolean)
+
+  posts.sort((post1, post2) => (post1!.date > post2!.date ? -1 : 1))
+
   return posts
 }

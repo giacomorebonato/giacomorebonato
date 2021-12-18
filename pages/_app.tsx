@@ -1,15 +1,11 @@
-import { cache } from '@emotion/css'
-import { CacheProvider } from '@emotion/react'
-import { AnimatePresence } from 'framer-motion'
-import { GlobalStyles } from 'twin.macro'
+import { ChakraProvider } from '@chakra-ui/react'
+import { AppProps } from 'next/app'
+import { customTheme } from '../lib/custom-theme'
 
-const App = ({ Component, pageProps, router }) => (
-  <CacheProvider value={cache}>
-    <GlobalStyles />
-    <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} key={router.route} />
-    </AnimatePresence>
-  </CacheProvider>
+const App = ({ Component, pageProps, router }: AppProps) => (
+  <ChakraProvider theme={customTheme}>
+    <Component {...pageProps} key={router.route} />
+  </ChakraProvider>
 )
 
 export default App

@@ -1,13 +1,23 @@
+import {
+  Box,
+  Text as ChakraText,
+  useColorMode,
+  useTheme
+} from '@chakra-ui/react'
 import Head from 'next/head'
-import NextLink from 'next/link'
 import React from 'react'
-import 'twin.macro'
-import { Chapter, Container, Text, Title } from '../../components'
+import { Post } from '../../@types/post'
+import { Chapter, Container, MyLink, Title } from '../../components'
 import { getAllPosts } from '../../lib/post-helpers'
 
-type PostsProps = { posts: any }
+type PostsProps = { posts: Post[] }
 
 const Posts: React.FC<PostsProps> = ({ posts }) => {
+  const theme = useTheme()
+  const { colorMode } = useColorMode()
+  const borderColor = theme.colors.primary({ colorMode })
+  const text = theme.colors.text({ colorMode })
+
   return (
     <Container>
       <Head>
@@ -15,30 +25,30 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
       </Head>
 
       <Chapter>Posts</Chapter>
-      <section tw='flex flex-col'>
-        {posts.map((post: any) => {
-          return (
-            <NextLink
-              href={`/posts/${post.slug}`}
-              passHref
-              key={`post-${post.date}`}
-            >
-              <a
-                key={post.slug}
-                tw='dark:hover:bg-blue-50 hover:bg-red-400 hover:bg-opacity-10 dark:hover:bg-opacity-10 p-2 rounded'
-              >
-                <div tw='mb-4 block'>
-                  <Chapter tw='text-sm text-blue-400'>{post.date}</Chapter>
-                  <Title tw='text-lg font-bold text-blue-300'>
-                    {post.title}
-                  </Title>
-                  <Text tw='text-blue-200'>{post.spoiler}</Text>
-                </div>
-              </a>
-            </NextLink>
-          )
-        })}
-      </section>
+
+      {posts.map((post) => {
+        return (
+          <MyLink
+            href={`/posts/${post.slug}`}
+            key={`post-${post.date}`}
+            border='1px'
+            borderColor='transparent'
+            borderRadius='md'
+            p='2'
+            _hover={{
+              border: '1px',
+              borderColor
+            }}
+            variant='primary'
+          >
+            <Box mb='4'>
+              <Chapter>{post.date}</Chapter>
+              <Title>{post.title}</Title>
+              <ChakraText color={text}>{post.spoiler}</ChakraText>
+            </Box>
+          </MyLink>
+        )
+      })}
     </Container>
   )
 }
@@ -48,8 +58,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
-    },
+      posts
+    }
   }
 }
 

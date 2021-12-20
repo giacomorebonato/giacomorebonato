@@ -1,16 +1,21 @@
 import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
-import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
+import { StyleFunctionProps } from '@chakra-ui/theme-tools'
 
 export const customTheme = extendTheme(
   {
     components: {
       Heading: {
         variants: {
-          primary: ({ colorMode }: StyleFunctionProps) => {
-            return {
-              color: colorMode === 'dark' ? 'pink.300' : 'black'
-            }
-          }
+          primary: ({ colorMode }: StyleFunctionProps) => ({
+            color: colorMode === 'dark' ? 'pink.300' : 'black'
+          })
+        }
+      },
+      Text: {
+        text: {
+          primary: ({ colorMode }: StyleFunctionProps) => ({
+            color: colorMode === 'dark' ? 'pink.100' : 'black'
+          })
         }
       },
       Link: {
@@ -31,9 +36,12 @@ export const customTheme = extendTheme(
       }
     },
     colors: {
-      text: mode('black', 'pink.100'),
-      primary: mode('black', 'pink.400'),
-      highlight: mode('blue.600', 'purple.200')
+      text: 'black',
+      textDark: 'pink.100',
+      primary: 'black',
+      primaryDark: 'pink.400',
+      highlight: 'blue.600',
+      highlightDark: 'purple.200'
     }
   },
   withDefaultColorScheme({

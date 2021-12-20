@@ -2,6 +2,7 @@ import {
   Box,
   Text as ChakraText,
   useColorMode,
+  useColorModeValue,
   useTheme
 } from '@chakra-ui/react'
 import Head from 'next/head'
@@ -15,8 +16,7 @@ type PostsProps = { posts: Post[] }
 const Posts: React.FC<PostsProps> = ({ posts }) => {
   const theme = useTheme()
   const { colorMode } = useColorMode()
-  const borderColor = theme.colors.primary({ colorMode })
-  const text = theme.colors.text({ colorMode })
+  const textColor = useColorModeValue('black', 'pink.100')
 
   return (
     <Container>
@@ -37,14 +37,14 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
             p='2'
             _hover={{
               border: '1px',
-              borderColor
+              borderColor: textColor
             }}
             variant='primary'
           >
             <Box mb='4'>
               <Chapter>{post.date}</Chapter>
               <Title>{post.title}</Title>
-              <ChakraText color={text}>{post.spoiler}</ChakraText>
+              <ChakraText color={textColor}>{post.spoiler}</ChakraText>
             </Box>
           </MyLink>
         )

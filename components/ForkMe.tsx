@@ -1,11 +1,17 @@
-import { Link as ChakraLink, useColorMode, useTheme } from '@chakra-ui/react'
+import {
+  Link as ChakraLink,
+  useColorModeValue,
+  useTheme
+} from '@chakra-ui/react'
 import { getColor } from '@chakra-ui/theme-tools'
 import React from 'react'
 
 export const ForkMe = () => {
   const theme = useTheme()
-  const { colorMode } = useColorMode()
-  const fill = theme.colors.primary({ colorMode })
+  const fill = useColorModeValue(
+    getColor(theme, 'black'),
+    getColor(theme, 'pink.400')
+  )
 
   return (
     <ChakraLink
@@ -21,7 +27,7 @@ export const ForkMe = () => {
         height='80'
         viewBox='0 0 250 250'
         style={{
-          fill: getColor(theme, fill),
+          fill,
           color: '#fff',
           position: 'absolute',
           top: 0,

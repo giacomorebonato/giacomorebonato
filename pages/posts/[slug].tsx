@@ -1,13 +1,11 @@
-import { Image, Text } from '@chakra-ui/react'
-import 'dracula-prism/dist/css/dracula-prism.min.css'
+import { Box, Image, Link as ChakraLink, Text } from '@chakra-ui/react'
+import 'dracula-prism/dist/css/dracula-prism.css'
 import { GetStaticProps } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import Prism from 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
 import React, { useEffect } from 'react'
-import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { Chapter, Container } from '../../components'
 import { getAllPosts, getPostByFilename } from '../../lib/post-helpers'
 
@@ -43,21 +41,25 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
         src={`/images/${post.featuredImage}`}
         alt={post.featuredImageDescription}
       />
-      <Text as='span' fontSize='sm' mb='4' mt='1' color='text'>
+      <Text as='span' fontSize='sm' mb='4' mt='1' variant='text'>
         Photo by{' '}
-        <a
+        <ChakraLink
+          fontWeight='semibold'
           href={`https://unsplash.com/@${post.photoBy}?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText`}
         >
           {post.photoBy}
-        </a>{' '}
+        </ChakraLink>{' '}
         on{' '}
-        <a href='https://unsplash.com/s/photos/house-family?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText'>
+        <ChakraLink
+          fontWeight='semibold'
+          href='https://unsplash.com/s/photos/house-family?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText'
+        >
           Unsplash
-        </a>
+        </ChakraLink>
       </Text>
-      <section>
-        <MDXRemote {...post.mdxSource} components={{ SyntaxHighlighter }} />
-      </section>
+      <Box as='section'>
+        <MDXRemote {...post.mdxSource} />
+      </Box>
     </Container>
   )
 }

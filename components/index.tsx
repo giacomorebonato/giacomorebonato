@@ -1,5 +1,6 @@
 import { Box, Text as ChakraText, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
+export { ChakraMdx } from './chakra-mdx'
 export { Chapter } from './chapter'
 export { Container } from './Container'
 export { MyLink } from './my-link'

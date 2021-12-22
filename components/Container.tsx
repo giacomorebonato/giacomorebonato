@@ -9,7 +9,7 @@ import React from 'react'
 import { Title } from '.'
 import { ColorModeSwitcher } from './color-mode-switcher'
 
-export const Container: React.FC<any> = ({ css, children }) => {
+export const Container: React.FC<any> = ({ children }) => {
   const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
 
   return (

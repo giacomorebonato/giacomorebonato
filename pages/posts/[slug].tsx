@@ -1,12 +1,12 @@
 import { Box, Image, Link as ChakraLink, Text } from '@chakra-ui/react'
 import 'dracula-prism/dist/css/dracula-prism.css'
 import { GetStaticProps } from 'next'
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import Prism from 'prismjs'
 import React, { useEffect } from 'react'
-import { Chapter, Container } from '../../components'
+import { ChakraMdx, Chapter, Container } from '../../components'
 import { getAllPosts, getPostByFilename } from '../../lib/post-helpers'
 
 type Post = {
@@ -58,7 +58,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
         </ChakraLink>
       </Text>
       <Box as='section'>
-        <MDXRemote {...post.mdxSource} />
+        <ChakraMdx mdxSource={post.mdxSource} />
       </Box>
     </Container>
   )

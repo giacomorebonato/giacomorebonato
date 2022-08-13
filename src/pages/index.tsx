@@ -1,19 +1,12 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  Image,
-  Link as ChakraLink,
-  Text as ChakraText
-} from '@chakra-ui/react'
+/* eslint-disable @next/next/no-img-element */
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import React from 'react'
 import { Chapter, Container, MyLink, MySection, P } from '../components'
-import { Contacts } from '../components/Contacts'
-import { ForkMe } from '../components/ForkMe'
-import { Hobbies } from '../components/Hobbies'
-import { Skills } from '../components/Skills'
+import { Contacts } from '../components/contacts'
+import { ForkMe } from '../components/fork-me'
+import { Hobbies } from '../components/hobbies'
+import { Skills } from '../components/skills'
 
 const Index: React.FC = () => {
   return (
@@ -23,30 +16,24 @@ const Index: React.FC = () => {
         <meta name='description' content='Information about Giacomo Rebonato' />
       </Head>
       <ForkMe />
-      <Box textAlign='center'>
-        <Image
-          as={motion.img}
+      <div className='text-center'>
+        <motion.img
+          style={{ maxWidth: '250px' }}
+          className='border-4 rounded-b-full inline border-pink-600 object-contain'
           drag
           dragElastic={0.8}
           dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
           whileDrag={{ rotate: 360 }}
-          border='4px'
-          borderRadius='full'
-          display='inline'
           src='avatar.jpg'
           alt='A photograph of Giacomo Rebonato'
-          object-fit='contain'
-          maxW='250px'
         />
-      </Box>
+      </div>
 
       <MySection title='Who am I?'>
         <P>
           I am a programmer and a musician{' '}
-          <ChakraText textDecor='line-through' as='span'>
-            based in Dublin Ireland
-          </ChakraText>{' '}
-          recently moved back to{' '}
+          <span className='line-through'>based in Dublin Ireland</span> recently
+          moved back to{' '}
           <MyLink href='https://en.wikipedia.org/wiki/Verona' external>
             Verona (Italy)
           </MyLink>
@@ -68,43 +55,38 @@ const Index: React.FC = () => {
         </P>
       </MySection>
 
-      <Box>
+      <div>
         <Chapter>Other things</Chapter>
         <Hobbies />
-      </Box>
+      </div>
 
       <MySection title='Contacts'>
         <Contacts />
       </MySection>
 
-      <Divider mt='2' mb='4' />
-
-      <Flex mb='2' justifyContent='center'>
-        <ChakraText>Song of the moment:&nbsp;</ChakraText>
+      <div className='mb-2 flex justify-center border-t border-b border-gray-400 pt-2 pb-2'>
+        <span>Song of the moment:&nbsp;</span>
         <MyLink href='https://songwhip.com/jdmglobal/get-back' external>
           Get Back by JDM Global
         </MyLink>
-      </Flex>
+      </div>
 
-      <Divider mt='2' mb='4' />
-
-      <ChakraLink
-        mb='4'
-        mt='4'
-        display='flex'
-        justifyItems='center'
-        alignItems='center'
+      <a
+        className='mb-4 mt-4 flex justify-center items-center'
         href='https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fwww.giacomorebonato.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext'
         target='_blank'
+        rel='noreferrer'
       >
-        <Image
-          mr='2'
-          w='16'
-          src='./lighthouse-logo.svg'
+        <img
+          className='mr-2'
+          src='/lighthouse-logo.svg'
+          width='40'
+          height='40'
           alt='Test this page on Google Lighthouse'
         />
-        <ChakraText>Test this page on Google Lighthouse</ChakraText>
-      </ChakraLink>
+
+        <span>Test this page on Google Lighthouse</span>
+      </a>
     </Container>
   )
 }

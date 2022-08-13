@@ -1,4 +1,3 @@
-import { ListItem, Text, UnorderedList } from '@chakra-ui/react'
 import React from 'react'
 
 type MyListProps = {
@@ -13,21 +12,21 @@ type MyListProps = {
 
 export const MyList: React.FC<MyListProps> = ({ items }) => {
   return (
-    <UnorderedList w='100%'>
+    <ul className='w-full list-disc list-inside'>
       {items.map((item) => {
         if (typeof item === 'string') {
-          return <ListItem key={item}>{item}</ListItem>
+          return <li key={item}>{item}</li>
         }
 
         return (
-          <ListItem key={item.text}>
-            <Text role='img' aria-label={item.iconLabel} as='span' pr='3'>
+          <li key={item.text}>
+            <span role='img' aria-label={item.iconLabel} className='pr-3'>
               {item.icon}
-            </Text>
-            <Text as='span'>{item.text}</Text>
-          </ListItem>
+            </span>
+            <span>{item.text}</span>
+          </li>
         )
       })}
-    </UnorderedList>
+    </ul>
   )
 }

@@ -21,15 +21,12 @@ type PostTemplateProps = {
 }
 
 const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
+  const title = `${post.title} | Giacomo Rebonato`.toString()
   return (
     <Container className='max-w-xl'>
       <Head>
-        <title>{post.title} | Giacomo Rebonato</title>
-        <meta
-          property='og:title'
-          content={`${post.title} | Giacomo Rebonato`}
-          key='title'
-        />
+        <title>{title}</title>
+        <meta property='og:title' content={title} key='title' />
       </Head>
 
       <Chapter>{post.title}</Chapter>

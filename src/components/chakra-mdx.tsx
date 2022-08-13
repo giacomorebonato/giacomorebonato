@@ -1,20 +1,11 @@
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import dynamic from 'next/dynamic'
 import React from 'react'
+import { PrismAsyncLight } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { Chapter, MyLink, P } from '.'
-
 type ChakraMdxProps = {
   mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>
 }
-
-const ClientSyntaxHighlighter = dynamic(
-  () =>
-    import('react-syntax-highlighter').then(
-      ({ PrismAsyncLight }) => PrismAsyncLight
-    ),
-  { ssr: false }
-)
 
 export const ChakraMdx: React.FC<ChakraMdxProps> = ({ mdxSource }) => {
   return (
@@ -27,11 +18,7 @@ export const ChakraMdx: React.FC<ChakraMdxProps> = ({ mdxSource }) => {
             : ''
 
           return (
-            <ClientSyntaxHighlighter
-              {...props}
-              style={dracula}
-              language={language}
-            />
+            <PrismAsyncLight {...props} style={dracula} language={language} />
           )
         },
         a: MyLink,

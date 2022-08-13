@@ -21,10 +21,12 @@ const Index: React.FC = () => {
           style={{ maxWidth: '250px' }}
           className='border-4 rounded-b-full inline border-pink-600 object-contain'
           drag
+          width='250'
+          height='250'
           dragElastic={0.8}
           dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
           whileDrag={{ rotate: 360 }}
-          src='avatar.jpg'
+          src='avatar.webp'
           alt='A photograph of Giacomo Rebonato'
         />
       </div>

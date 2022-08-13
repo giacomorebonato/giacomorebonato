@@ -1,38 +1,19 @@
-import {
-  Link as ChakraLink,
-  useColorModeValue,
-  useTheme
-} from '@chakra-ui/react'
-import { getColor } from '@chakra-ui/theme-tools'
-import React from 'react'
-
 export const ForkMe = () => {
-  const theme = useTheme()
-  const fill = useColorModeValue(
-    getColor(theme, 'black'),
-    getColor(theme, 'pink.400')
-  )
-
   return (
-    <ChakraLink
+    <a
       href='https://github.com/giacomorebonato/giacomorebonato'
       className='github-corner'
-      variant='forkMe'
       rel='noopener noreferrer'
       target='_blank'
       aria-label='View source on GitHub'
     >
       <svg
+        className='absolute fill-black dark:fill-pink-400 top-0 right-0'
         width='80'
         height='80'
         viewBox='0 0 250 250'
         style={{
-          fill,
-          color: '#fff',
-          position: 'absolute',
-          top: 0,
-          border: 0,
-          right: 0
+          color: '#fff'
         }}
         aria-hidden='true'
       >
@@ -49,6 +30,6 @@ export const ForkMe = () => {
           className='octo-body'
         ></path>
       </svg>
-    </ChakraLink>
+    </a>
   )
 }

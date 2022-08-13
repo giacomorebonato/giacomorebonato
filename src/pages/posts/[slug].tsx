@@ -1,11 +1,9 @@
-import { Box, Image, Link as ChakraLink, Text } from '@chakra-ui/react'
-import 'dracula-prism/dist/css/dracula-prism.css'
+/* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from 'next'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
-import Prism from 'prismjs'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ChakraMdx, Chapter, Container } from '../../components'
 import { getAllPosts, getPostByFilename } from '../../lib/post-helpers'
 
@@ -23,43 +21,45 @@ type PostTemplateProps = {
 }
 
 const PostTemplate: React.FC<PostTemplateProps> = ({ post }) => {
-  useEffect(() => {
-    Prism.highlightAll()
-  }, [])
-
+  const title = `${post.title} | Giacomo Rebonato`.toString()
   return (
-    <Container>
+    <Container className='max-w-xl'>
       <Head>
-        <title>{post.title} | Giacomo Rebonato</title>
+        <title>{title}</title>
+        <meta property='og:title' content={title} key='title' />
       </Head>
 
       <Chapter>{post.title}</Chapter>
-      <Chapter as='h3' fontSize='sm'>
+      <Chapter as='h3' className='text-sm'>
         {post.date}
       </Chapter>
-      <Image
+      <img
         src={`/images/${post.featuredImage}`}
         alt={post.featuredImageDescription}
       />
-      <Text as='span' fontSize='sm' mb='4' mt='1' variant='text'>
+      <span className='text-sm mb-4 mt-1'>
         Photo by{' '}
-        <ChakraLink
-          fontWeight='semibold'
+        <a
+          className='font-semibold'
+          target='_blank'
           href={`https://unsplash.com/@${post.photoBy}?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText`}
+          rel='noreferrer'
         >
           {post.photoBy}
-        </ChakraLink>{' '}
+        </a>{' '}
         on{' '}
-        <ChakraLink
-          fontWeight='semibold'
+        <a
+          className='font-semibold'
+          target='_blank'
           href='https://unsplash.com/s/photos/house-family?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText'
+          rel='noreferrer'
         >
           Unsplash
-        </ChakraLink>
-      </Text>
-      <Box as='section'>
+        </a>
+      </span>
+      <section>
         <ChakraMdx mdxSource={post.mdxSource} />
-      </Box>
+      </section>
     </Container>
   )
 }

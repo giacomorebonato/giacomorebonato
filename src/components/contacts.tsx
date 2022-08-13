@@ -1,29 +1,28 @@
-import { Box, ListItem, UnorderedList } from '@chakra-ui/react'
 import React from 'react'
 import { MyLink } from '.'
 
 export const Contacts: React.FC = () => (
-  <Box>
-    <UnorderedList spacing={2}>
-      <ListItem>
+  <section>
+    <ul className='grid grid-cols-1 text-black dark:text-white gap-2'>
+      <li>
         <MyLink external href='https://github.com/giacomorebonato/'>
           GitHub
         </MyLink>
-      </ListItem>
-      <ListItem>
+      </li>
+      <li>
         <MyLink external href='https://twitter.com/giacomorebonato'>
           Twitter
         </MyLink>
-      </ListItem>
-      <ListItem>
+      </li>
+      <li>
         <MyLink external href='https://www.linkedin.com/in/giacomorebonato/'>
           Linkedin
         </MyLink>
-      </ListItem>
-      <ListItem>
+      </li>
+      <li>
         Email -{` `}
         <MyLink href='mailto:grebonato@outlook.ie'>grebonato@outlook.ie</MyLink>
-      </ListItem>
-    </UnorderedList>
-  </Box>
+      </li>
+    </ul>
+  </section>
 )

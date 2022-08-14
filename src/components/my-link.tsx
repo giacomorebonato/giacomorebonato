@@ -2,8 +2,8 @@ import NextLink from 'next/link'
 import React from 'react'
 import { FiExternalLink } from 'react-icons/fi'
 export { Chapter } from './chapter'
-export { Container } from './container'
-export { MySection } from './my-section'
+export { Container } from './container.server'
+export { MySection } from './my-section.server'
 export { Title } from './title'
 
 type MyLinkProps = React.HTMLProps<HTMLAnchorElement> & {

@@ -1,7 +1,7 @@
 import React from 'react'
 export { Chapter } from './chapter'
-export { Container } from './container'
-export { MySection } from './my-section'
+export { Container } from './container.server'
+export { MySection } from './my-section.server'
 
 type TitleProps = React.HTMLProps<HTMLHeadingElement> & {
   as?: 'h1' | 'h2' | 'h3' | 'h4'

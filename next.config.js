@@ -1,7 +1,9 @@
 module.exports = {
   experimental: {
-      images: {
-          allowFutureImage: true
-      }
+    images: {
+      allowFutureImage: true,
+      runtime: 'experimental-edge',
+      serverComponents: true
+    }
   }
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 export { ChakraMdx } from './chakra-mdx'
 export { Chapter } from './chapter'
-export { Container } from './container'
+export { Container } from './container.server'
 export { MyLink } from './my-link'
-export { MySection } from './my-section'
+export { MySection } from './my-section.server'
 export { Title } from './title'
 
 export const Text: React.FC<React.HTMLProps<HTMLSpanElement>> = ({

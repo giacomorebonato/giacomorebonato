@@ -20,24 +20,24 @@ export const MyLink = ({
   if (!href) return <></>
 
   return (
-    <NextLink href={href} passHref>
-      <a
-        href={href}
-        className={`${className} link link-secondary link-hover`}
-        target={external ? '_blank' : undefined}
-        rel='noopener noreferrer'
-        {...otherProps}
-      >
-        <span>
-          {children}
-          {external ? (
-            <>
-              {' '}
-              <FiExternalLink className='inline align-text-bottom' />
-            </>
-          ) : null}
-        </span>
-      </a>
+    <NextLink
+      href={href}
+      passHref
+      as='a'
+      className={`${className} link link-secondary link-hover`}
+      target={external ? '_blank' : undefined}
+      rel='noopener noreferrer'
+      {...(otherProps as any)}
+    >
+      <span>
+        {children}
+        {external ? (
+          <>
+            {' '}
+            <FiExternalLink className='inline align-text-bottom' />
+          </>
+        ) : null}
+      </span>
     </NextLink>
   )
 }

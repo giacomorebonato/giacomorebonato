@@ -5,12 +5,11 @@ export const Skills = () => {
   return (
     <MyList
       items={[
-        'ReactJS',
-        'Serverless',
+        'React',
         'NodeJS',
-        'A11Y',
         'TypeScript',
-        'GraphQL',
+        'Accessibility',
+        'Observability',
         'Testing'
       ]}
     />

@@ -12,7 +12,9 @@ export const Hobbies: React.FC = () => {
         {
           icon: '🎸',
           iconLabel: 'guitar',
-          text: 'I play jazz guitar',
+          text: (<span>
+            I play <a className='link link-secondary link-hover' target="_blank" href="https://www.youtube.com/watch?v=L2i8sQHUWEs">fingerstyle guitar</a>
+          </span>),
         },
         {
           icon: '🥳',

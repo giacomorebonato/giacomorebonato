@@ -34,12 +34,9 @@ const Index: React.FC = () => {
       <MySection title='Who am I?'>
         <P>
           I am a programmer and a musician{' '}
-          <span className='line-through'>based in Dublin Ireland</span> recently
-          moved back to{' '}
-          <MyLink href='https://en.wikipedia.org/wiki/Verona' external>
-            Verona (Italy)
-          </MyLink>
-          , but planning to visit Ireland often.
+          based between Dublin (Ireland) and {' '}
+          Bologna (Italy)
+          .
           <br />
           Passionate about:
         </P>
@@ -47,6 +44,9 @@ const Index: React.FC = () => {
 
       <MySection>
         <Skills />
+
+        <br />
+        Checkout <a href='https://www.fastrat.dev' target='_blank' className='link link-secondary link-hover'>my custom Fastify + React starter</a>.
       </MySection>
 
       <MySection title='Posts'>
@@ -68,9 +68,9 @@ const Index: React.FC = () => {
 
       <div className='mb-2 flex justify-center border-t border-b border-gray-400 pt-2 pb-2'>
         <span>Song of the moment:&nbsp;</span>
-        <MyLink href='https://songwhip.com/jdmglobal/get-back' external>
-          Get Back by JDM Global
-        </MyLink>
+        <a target='_blank' href='https://songwhip.com/trent-reznor-and-atticus-ross/pull-over' className='link link-secondary link-hover'>
+          Pull Over by Trent Reznor and Atticus Ross
+        </a>
       </div>
 
       <a

@@ -20,7 +20,7 @@ export const Contacts: React.FC = () => (
         </MyLink>
       </li>
       <li>
-        <MyLink href='mailto:grebonato@outlook.ie'>grebonato@outlook.ie</MyLink>
+        <MyLink external href='mailto:grebonato@outlook.ie'>grebonato@outlook.ie</MyLink>
       </li>
     </ul>
   </section>

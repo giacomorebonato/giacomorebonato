@@ -19,6 +19,12 @@ export const MyLink = ({
 }: MyLinkProps) => {
   if (!href) return <></>
 
+  if (external) {
+    return (
+      <a target='_blank' href={href} className={`${className} link link-secondary link-hover`} {...otherProps} >{children}</a>
+    )
+  }
+
   return (
     <NextLink
       href={href}

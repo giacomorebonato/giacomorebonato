@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from 'next'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 type MyListProps = {
   items:
@@ -6,7 +6,7 @@ type MyListProps = {
   | {
     icon: string
     iconLabel: string
-    text: string | Element
+    text: string | ReactNode
   }[]
 }
 

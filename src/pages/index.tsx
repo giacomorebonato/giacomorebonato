@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import React from 'react'

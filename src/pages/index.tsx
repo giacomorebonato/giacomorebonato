@@ -45,7 +45,7 @@ const Index: React.FC = () => {
         <Skills />
 
         <br />
-        Checkout <a href='https://www.fastrat.dev' target='_blank' className='link link-secondary link-hover'>my custom Fastify + React starter</a>.
+        Check out <a href='https://www.fastrat.dev' target='_blank' className='link link-secondary link-hover'>my custom Fastify + React starter</a>.
       </MySection>
 
       <MySection title='Posts'>
